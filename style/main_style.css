@@ -1,0 +1,220 @@
+@font-face {
+  font-family: "HoltWoodOneSC";
+  src: url(../font/HoltwoodOneSC-Regular.ttf);
+}
+@font-face {
+  font-family: "BMHannaPro";
+  src: url(../font/BMHANNAPro.ttf);
+}
+
+body {
+  font-family: "HoltWoodOneSC";
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+section {
+  margin: 60px 0;
+}
+.inner_1200 {
+  width: 1200px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.section_header {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.section_title {
+  font-size: 20px;
+}
+.btn_viewAdd {
+  font-family: "BMHannaPro";
+}
+.btn_viewAdd:hover {
+  color: #888;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 24px;
+}
+.header_active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+.logo {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.navbar_list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+.navbar_item {
+  font-size: 0.6em;
+  text-transform: uppercase;
+}
+.navbar_item:last-child {
+  font-size: 0.9em;
+}
+.navbar_item:hover {
+  color: #555;
+}
+
+.video_section {
+  width: 100%;
+  height: 25.5vw;
+  margin: 0;
+  background: #000;
+}
+.video_section iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.simple_menu_section {
+  margin: 50px 0;
+}
+.simple_menu_list {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+.simple_menu_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.simple_menu_icon_box {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #333;
+  overflow: hidden;
+}
+.simple_menu_icon_box a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.simple_icon {
+  font-size: 40px;
+}
+.simple_menu_item:nth-child(1) .simple_icon {
+  transform: translateX(5%);
+}
+.simple_menu_item:nth-child(2) .simple_icon {
+  transform: translateX(-5%);
+}
+
+.slogun_section {
+  margin: 30px 0;
+  font-size: 32px;
+}
+.slogun_top_txt {
+  transform: translateX(-100%);
+  transition: all 0.5s;
+}
+.slogun_bottom_txt {
+  display: flex;
+  justify-content: flex-end;
+  transform: translateX(100%);
+  transition: all 0.5s 0.5s;
+}
+.slogun_active {
+  transform: translateX(0);
+}
+
+.coffee_beans_section {
+  margin: 60px 0;
+}
+.coffee_beans_list {
+  width: 100%;
+  display: flex;
+}
+.coffee_beans_item {
+  width: calc(100% / 3);
+}
+.coffee_beans_item img {
+  width: 100%;
+}
+
+.menu_list {
+  display: flex;
+  width: 100%;
+}
+
+.menu_item {
+  width: calc(100% / 4);
+  overflow: hidden;
+}
+.menu_item img {
+  transition: all 0.5s;
+  width: 100%;
+}
+.menu_item:hover img {
+  transform: scale(1.4);
+}
+
+.store_section {
+}
+.store_list {
+  display: flex;
+  justify-content: space-around;
+}
+.store_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% / 2);
+  padding: 0 50px;
+
+  font-family: "BMHannaPro";
+}
+.store_item_img_box {
+  width: 80%;
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 50px;
+}
+.store_item_img_box img {
+  width: 100%;
+}
+.store_item_title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer {
+  background: #333;
+}
+.footer .inner_1200 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  height: 200px;
+  font-family: "BMHannaPro";
+}
+.br_box {
+  text-align: center;
+  color: #fff;
+}
