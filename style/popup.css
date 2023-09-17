@@ -1,0 +1,81 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pan {
+  width: 400px;
+  height: 500px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 12px;
+  position: fixed;
+  z-index: 10;
+  top: 10vh;
+  left: 10vw;
+  box-shadow: 3px 3px 3px 0px #333;
+}
+.pan_closed {
+  display: none;
+}
+.slide_container {
+  width: 95%;
+  height: 90%;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 10px;
+  position: relative;
+}
+.slide_list {
+  width: 100%;
+  height: 100%;
+}
+.slide_item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.slide_item img {
+  width: 100%;
+  height: 100%;
+}
+.popup_slide_btn {
+  width: 10px;
+  height: 10px;
+  line-height: 13px;
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  background: #ddd;
+  opacity: 0.3;
+  padding: 10px;
+  transform: translateY(-50%);
+  user-select: none;
+  cursor: pointer;
+}
+.btn_popup_L {
+  left: 10px;
+}
+.btn_popup_R {
+  right: 10px;
+}
+.btn_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  user-select: none;
+}
+.popup_btn {
+  color: #333;
+  cursor: pointer;
+}
+.popup_btn:hover {
+  color: #888;
+}

@@ -7,12 +7,37 @@
     <title>NFBB COFFEE ROASTERS</title>
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/main_style.css" />
+    <link rel="stylesheet" href="./style/popup.css">
     <script
       src="https://kit.fontawesome.com/57b67e461c.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
+    <div class="pan">
+      <div class="slide_container">
+        <ul class="slide_list">
+          <li class="slide_item">
+            <img src="./img/popup_img01.jpeg" alt="popup_img" />
+          </li>
+          <li class="slide_item">
+            <img src="./img/popup_img02.jpeg" alt="popup_img" />
+          </li>
+          <li class="slide_item">
+            <img src="./img/popup_img03.jpeg" alt="popup_img" />
+          </li>
+          <li class="slide_item">
+            <img src="./img/popup_img04.jpeg" alt="popup_img" />
+          </li>
+        </ul>
+        <div class="popup_slide_btn btn_popup_L">&lt</div>
+        <div class="popup_slide_btn btn_popup_R">&gt</div>
+      </div>
+      <div class="btn_container">
+        <div class="popup_btn btn_oneday_close">오늘 하루 닫기</div>
+        <div class="popup_btn btn_close">닫기</div>
+      </div>
+    </div>
     <div id="wrap">
       <header class="header">
         <div class="logo">
@@ -265,5 +290,6 @@
 
     <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script defer src="./script/main.js"></script>
+    <script defer src="./script/popup.js"></script>
   </body>
 </html>
