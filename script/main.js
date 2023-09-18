@@ -120,7 +120,7 @@ $(document).ready(() => {
   );
 
   function slide_all(left_value, timer) {
-    $(".menu_item").stop().animate(
+    $(".menu_item").animate(
       {
         left: left_value,
       },
@@ -129,7 +129,7 @@ $(document).ready(() => {
     );
   }
   function slide_init(eq_value, left_value) {
-    $(".menu_item").eq(eq_value).stop().animate(
+    $(".menu_item").eq(eq_value).animate(
       {
         left: left_value,
       },

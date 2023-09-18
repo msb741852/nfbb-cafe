@@ -1,4 +1,24 @@
 $(document).ready(() => {
+  // ================= 쿠키 관련 시작 ==================
+  // cookie 확인
+
+  const cookies = document.cookie;
+  if (cookies.includes("popup")) {
+    // 'popup'을 포함한 쿠키가 있다면 팝업 삭제
+    $(".pan").remove();
+  }
+  let hour_24 = 1 * 60 * 60 * 24;
+  $(".btn_oneday_close").click(() => {
+    document.cookie = `name=popup;max-age=${hour_24}`;
+    $(".pan").remove();
+  });
+
+  $(".btn_close").click(() => {
+    $(".pan").addClass("pan_closed");
+  });
+
+  // ================= 쿠키 관련 끝 ==================
+
   let curr_pos_x = 0;
   let curr_pos_y = 0;
   let box_x = 0;
@@ -170,8 +190,4 @@ $(document).ready(() => {
       popup_auto_slide();
     }
   );
-
-  $(".popup_btn").click(() => {
-    $(".pan").addClass("pan_closed");
-  });
 });
