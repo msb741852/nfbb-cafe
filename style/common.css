@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "HoltWoodOneSC";
+  src: url(../font/HoltwoodOneSC-Regular.ttf);
+}
+@font-face {
+  font-family: "BMHannaPro";
+  src: url(../font/BMHANNAPro.ttf);
+}
+:root {
+  --red-color: #7d1919;
+}

@@ -24,3 +24,8 @@
 - 2023.09.17
   - 팝업창 구현
     ![screencapture-127-0-0-1-5500-index-html-2023-09-17-23_31_31](https://github.com/msb741852/nfbb-cafe/assets/75235831/03e6efe2-3765-406d-a171-a0aa759fe70d)
+
+---
+
+- 2023.09.18
+  팝업창의 z-index가 menu_info의 z-index보다 낮아서 menu_info위에 팝업이 있을 때 menu_info가 노출되는 부분을 pan(팝업창)의 z-index를 menu_info보다 높여서 해결.
