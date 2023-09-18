@@ -221,6 +221,7 @@ section {
   overflow: hidden;
   position: absolute;
   top: 0;
+  transition: all 1s;
 }
 .menu_item img {
   transition: all 0.5s;

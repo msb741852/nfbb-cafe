@@ -72,19 +72,11 @@ $(document).ready(() => {
   });
 
   //==================== 팝업 슬라이드 ====================
-  let slide_item_width = $(".slide_item").width();
   let slide_curr_idx = 0;
   let slide_cnt = $(".slide_item").length;
   let btn_popup_L = $(".btn_popup_L");
   let btn_popup_R = $(".btn_popup_R");
   let popup_interval;
-  $(".slide_item").css({
-    left: `+=${slide_item_width}`,
-  });
-  $(".slide_item").eq(0).css({
-    left: 0,
-  });
-
   function prevent_popup_btn() {
     $(".popup_slide_btn").click(() => {
       $(".popup_slide_btn").css({
@@ -102,83 +94,61 @@ $(document).ready(() => {
   btn_popup_R.click(() => {
     $(".slide_item")
       .eq(slide_curr_idx % slide_cnt)
-      .animate(
-        {
-          left: "-100%",
-        },
-        1000
-      );
+      .css({
+        left: "-100%",
+        transition: "all 1s",
+      });
     $(".slide_item")
       .eq((slide_curr_idx + 1) % slide_cnt)
-      .animate(
-        {
-          left: "0",
-        },
-        1000
-      );
-    $(".slide_item")
-      .eq(slide_curr_idx % slide_cnt)
-      .animate(
-        {
+      .css({
+        left: "0",
+        transition: "all 1s",
+      });
+
+    // 슬라이드 1초가 지난 뒤 curr_idx - 1번째 아이템을 옮긴다.
+    setTimeout(() => {
+      $(".slide_item")
+        .eq((slide_curr_idx - 1) % slide_cnt)
+        .css({
           left: "100%",
-        },
-        0
-      );
+          transition: "all 0s",
+        });
+    }, 1000);
+
     slide_curr_idx += 1;
   });
 
   btn_popup_L.click(() => {
     $(".slide_item")
+      // 현재 나와있는 아이템 left 100%로 밀어내기
       .eq(slide_curr_idx % slide_cnt)
-      .animate(
-        {
-          left: "100%",
-        },
-        1000
-      );
+      .css({
+        left: "100%",
+        transition: "all 1s",
+      });
+
+    // 현재 -1 번째 아이템을 left: -100%로 보낸뒤
     $(".slide_item")
       .eq((slide_curr_idx - 1) % slide_cnt)
       .css({
         left: "-100%",
-      })
-      .animate(
-        {
+        transition: "all 0s",
+      });
+    setTimeout(() => {
+      $(".slide_item")
+        .eq(slide_curr_idx % slide_cnt)
+        .css({
           left: 0,
-        },
-        1000
-      );
+          transition: "all 1s",
+        });
+    }, 0);
     slide_curr_idx -= 1;
   });
 
   function popup_auto_slide() {
     clearInterval(popup_interval);
     popup_interval = setInterval(() => {
-      $(".slide_item")
-        .eq(slide_curr_idx % slide_cnt)
-        .animate(
-          {
-            left: `-=100%`,
-          },
-          1000
-        );
-      $(".slide_item")
-        .eq((slide_curr_idx + 1) % slide_cnt)
-        .animate(
-          {
-            left: `-=100%`,
-          },
-          1000
-        );
-
-      $(".slide_item")
-        .eq(slide_curr_idx % slide_cnt)
-        .animate(
-          {
-            left: "100%",
-          },
-          0
-        );
-      slide_curr_idx = slide_curr_idx + 1;
+      btn_popup_R.trigger("click");
     }, 3000);
   }
   popup_auto_slide();

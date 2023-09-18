@@ -91,10 +91,14 @@ $(document).ready(() => {
   let menu_item_cnt = $(".menu_item").length;
   let slide_timer = 1000;
   let slide_interval;
+
+  auto_slide();
+
   $(".btn_next").click(() => {
     prevent_btn(slide_timer);
-    slide_all(`-=${menu_item_width}`, slide_timer);
+    slide_all("R", `-=${menu_item_width}`);
     slide_init(
+      "R",
       curr_slide_no % menu_item_cnt,
       menu_item_width * ($(".menu_item").length - 1)
     );
@@ -103,13 +107,12 @@ $(document).ready(() => {
   $(".btn_prev").click(() => {
     prevent_btn(slide_timer);
     // 현재 슬라이드 번호 -1 left: -width
-    slide_init((curr_slide_no - 1) % menu_item_cnt, `-${menu_item_width}`);
+    slide_init("L", (curr_slide_no - 1) % menu_item_cnt, menu_item_width);
     // item 전체 left +넓이만큼
-    slide_all(`+=${menu_item_width}`, slide_timer);
+    slide_all("L", `+=${menu_item_width}`);
     curr_slide_no -= 1;
   });
 
-  auto_slide();
   $(".menu_list").hover(
     () => {
       clearInterval(slide_interval);
@@ -119,23 +122,35 @@ $(document).ready(() => {
     }
   );
 
-  function slide_all(left_value, timer) {
-    $(".menu_item").animate(
-      {
-        left: left_value,
-      },
-      timer,
-      "linear"
-    );
+  function slide_init(direction, eq_value, left_value) {
+    if (direction == "R") {
+      setTimeout(() => {
+        $(".menu_item").eq(eq_value).css({
+          left: left_value,
+          transition: "all 0s",
+        });
+      }, 1000);
+    } else if (direction == "L") {
+      $(".menu_item").eq(eq_value).css({
+        left: -left_value,
+        transition: "all 0s",
+      });
+    }
   }
-  function slide_init(eq_value, left_value) {
-    $(".menu_item").eq(eq_value).animate(
-      {
+  function slide_all(direction, left_value) {
+    if (direction == "R") {
+      $(".menu_item").css({
         left: left_value,
-      },
-      0,
-      "linear"
-    );
+        transition: "all 1s",
+      });
+    } else if (direction == "L") {
+      setTimeout(() => {
+        $(".menu_item").css({
+          left: left_value,
+          transition: "all 1s",
+        });
+      }, 10);
+    }
   }
   function prevent_btn(timer) {
     $(".slide_btn").css({

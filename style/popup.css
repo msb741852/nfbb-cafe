@@ -38,9 +38,13 @@ ul {
   height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 100%;
   pointer-events: none;
   user-select: none;
+  transition: all 1s;
+}
+.slide_item:nth-child(1) {
+  left: 0;
 }
 .slide_item img {
   width: 100%;
