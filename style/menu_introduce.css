@@ -1,20 +1,3 @@
-.page_header {
-  text-align: center;
-  font-size: 24px;
-  padding: 20px 0;
-  border-bottom: 1px solid #ddd;
-}
-.page_container {
-  padding: 50px 0;
-  box-sizing: border-box;
-}
-
-.menu_introduce_board {
-  width: 100%;
-  border-radius: 10px;
-  position: relative;
-}
-
 /* ===== menu_list_container ===== */
 .menu_list_container {
   display: none;

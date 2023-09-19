@@ -27,6 +27,7 @@ section {
   max-height: 1050px;
   margin: 0;
   background: #000;
+  pointer-events: none;
 }
 .video_section iframe {
   width: 100%;
@@ -168,8 +169,6 @@ section {
   right: 0;
 }
 
-.store_section {
-}
 .store_list {
   display: flex;
   justify-content: space-around;

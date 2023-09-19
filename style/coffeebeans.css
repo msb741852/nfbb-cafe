@@ -1,0 +1,32 @@
+#coffee_beans_container {
+  height: 0;
+  transition: all 2s;
+  overflow: hidden;
+  padding: 0;
+  box-sizing: content-box;
+}
+.coffee_beans_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.coffee_beans_item {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+.coffee_beans_img_box {
+  width: 200px;
+  font-size: 0;
+}
+.coffee_beans_img_box img {
+  width: 100%;
+  pointer-events: none;
+}
+.coffee_beans_desc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "BMHannaPro";
+  font-size: 24px;
+}

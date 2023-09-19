@@ -28,61 +28,8 @@ $(document).ready(() => {
   // ======================= 요소 생성 끝 =========================
 
   let header_height = $(".header").innerHeight();
-  let video_section_top_gap = $(".video_section").offset().top;
   let video_height = $(".video_section").height();
-  let curr_detail_menu_height;
-  let curr_detail_idx;
-  $(".navbar_item").hover(
-    function () {
-      $(",header");
-      $(".detail_menu").removeClass("detail_menu_active");
-      // 현재 마우스 엔터된 요소의 자식 중 클래스가 detail_memnu인 요소가 있다면 높이값 저장 아니면 0
-      curr_detail_menu_height =
-        $(this).children(".detail_menu").length == 0
-          ? 0
-          : $(this).children(".detail_menu").innerHeight();
-      if (curr_detail_menu_height != 0) {
-        $(".detail_menu_board").css({
-          height: curr_detail_menu_height,
-        });
-      }
-      $(this).children(".detail_menu").addClass("detail_menu_active");
-      curr_detail_idx = $(this).index();
-    },
-    function () {
-      $(".detail_menu_board").css({
-        height: 0,
-      });
-      $(".detail_menu").removeClass("detail_menu_active");
-    }
-  );
-  $(".detail_menu_board").hover(
-    function () {
-      $(".navbar_item").eq(curr_detail_idx).trigger("mouseenter");
-    },
-    function () {
-      $(".detail_menu_board").css({
-        height: 0,
-      });
-      $(".detail_menu").removeClass("detail_menu_active");
-    }
-  );
-
-  if ($(window).scrollTop() != 0) {
-    // 영상의 반보다 내려왔으면 헤더 픽스 & 글자 나오기
-    if (video_section_top_gap + video_height / 2 <= $(window).scrollTop()) {
-      $(".header").addClass("header_active");
-      $(".container").css({
-        paddingTop: header_height + "px",
-      });
-      $(".slogun_top_txt, .slogun_bottom_txt").addClass("slogun_active");
-    } else if (header_height <= $(window).scrollTop()) {
-      $(".header").addClass("header_active");
-      $(".container").css({
-        paddingTop: header_height + "px",
-      });
-    }
-  }
+  let video_section_top_gap = $(".video_section").offset().top;
 
   $(document).scroll(() => {
     let scroll_top = $(window).scrollTop();
@@ -99,11 +46,28 @@ $(document).ready(() => {
         paddingTop: 0,
       });
     }
+
     let curr_header_bottom = scroll_top + header_height;
     if (video_section_top_gap + video_height / 2 <= curr_header_bottom) {
       $(".slogun_top_txt, .slogun_bottom_txt").addClass("slogun_active");
     }
   });
+
+  if ($(window).scrollTop() != 0) {
+    // 영상의 반보다 내려왔으면 헤더 픽스 & 글자 나오기
+    if (video_section_top_gap + video_height / 2 <= $(window).scrollTop()) {
+      $(".header").addClass("header_active");
+      $(".container").css({
+        paddingTop: header_height + "px",
+      });
+      $(".slogun_top_txt, .slogun_bottom_txt").addClass("slogun_active");
+    } else if (header_height <= $(window).scrollTop()) {
+      $(".header").addClass("header_active");
+      $(".container").css({
+        paddingTop: header_height + "px",
+      });
+    }
+  }
 
   //==================== menu_introduce slide ================================
 

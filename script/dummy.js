@@ -213,3 +213,30 @@ const popup_img = [
   "popup_img03.jpeg",
   "popup_img04.jpeg",
 ];
+
+const coffee_beans = [
+  {
+    coffeeBeans_name: "에티오피아",
+    cupnote: "[컵노트 : 베르가못, 오렌지, 복숭아]",
+    sour: 3,
+    img_src: "coffeeBeans_red.jpeg",
+  },
+  {
+    coffeeBeans_name: "과테말라",
+    cupnote: "[컵노트 : 복숭아, 초콜릿, 바나나]",
+    sour: 1,
+    img_src: "coffeeBeans_green.jpeg",
+  },
+  {
+    coffeeBeans_name: "브라질 COE#12",
+    cupnote: "[컵노트 : 크랜베리, 살구, 호두]",
+    sour: 2,
+    img_src: "coffeeBeans_yellow.jpeg",
+  },
+  {
+    coffeeBeans_name: "콜롬비아",
+    cupnote: "[컵노트 : 귤, 견과류, 구운 옥수수]",
+    sour: 1,
+    img_src: "coffeeBeans_black.jpeg",
+  },
+];
