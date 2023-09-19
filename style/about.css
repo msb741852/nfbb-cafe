@@ -56,4 +56,8 @@
   height: 500px;
   border: 1px solid #ddd;
   box-sizing: border-box;
+  overflow: hidden;
+}
+.map_contents > div {
+  transform: scale(1.5);
 }
