@@ -1,4 +1,79 @@
 $(document).ready(function () {
+  // ================= 쿠키 관련 시작 ==================
+  // cookie 확인
+
+  const cookies = document.cookie;
+  let header_menu_item = "";
+  if (!cookies.includes("login")) {
+    // 'login'을 포함한 쿠키(세션)가 없다면 기본 헤더 메뉴 header_menu_item에 넣어주기
+    header_menu_item = `
+                            <li class="navbar_item">
+                              <a href="./pages/menu_introduce.html">menu</a>
+                              <div class="detail_menu">
+                                <ul class="detail_menu_list">
+                                  <li class="detail_menu_item">
+                                    <a href="./pages/menu_introduce.html">메뉴 소개</a>
+                                  </li>
+                                  <li class="detail_menu_item">
+                                    <a href="./pages/coffeebeans.html">원두 소개</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="navbar_item"><a href="#">store</a></li>
+                            <li class="navbar_item"><a href="./pages/about.html">about</a></li>
+                            <li class="navbar_item">
+                              <a href="#">login</a>
+                            </li>
+                            <li class="navbar_item">
+                              <a href="#"
+                                ><i class="fa-brands fa-instagram" style="color: #000000"></i
+                              ></a>
+                            </li>
+    `;
+  } else if (cookies.includes("login")) {
+    // 'login'을 포함한 쿠키(세션)가 있다면 로그인 헤더 메뉴 header_menu_item에 넣어주기
+    header_menu_item = `
+                            <li class="navbar_item">
+                              <a href="./pages/menu_introduce.html">menu</a>
+                              <div class="detail_menu">
+                                <ul class="detail_menu_list">
+                                  <li class="detail_menu_item">
+                                    <a href="./pages/menu_introduce.html">메뉴 소개</a>
+                                  </li>
+                                  <li class="detail_menu_item">
+                                    <a href="./pages/coffeebeans.html">원두 소개</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="navbar_item"><a href="#">store</a></li>
+                            <li class="navbar_item"><a href="./pages/about.html">about</a></li>
+                            <li class="navbar_item">
+                              <a href="#"><i class="fa-solid fa-user" style="color: #000000;"></i></a>
+                            </li>
+                            <li class="navbar_item">
+                              <a href="#"
+                                ><i class="fa-brands fa-instagram" style="color: #000000"></i
+                              ></a>
+                            </li>
+    `;
+  }
+  // header_menu_item에 저장한 메뉴들을 navbar_list에 배치 해주기
+  $(".navbar_list").append(header_menu_item);
+  let hour_24 = 1 * 60 * 60 * 24;
+  $(".btn_oneday_close").click(() => {
+    document.cookie = `popup=true;max-age=${hour_24}`;
+    $(".pan").remove();
+    console.log("sdsdfs");
+  });
+
+  $(".btn_close").click(() => {
+    $(".pan").addClass("pan_closed");
+  });
+
+  // ================= 쿠키 관련 끝 ==================
+
   $(".btn_top").click(() => {
     console.log($("html"));
     $("html").stop().animate(
