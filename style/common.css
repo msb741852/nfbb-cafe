@@ -174,9 +174,8 @@ ul {
   padding: 20px 0;
   border-bottom: 1px solid #ddd;
 }
-.page_container {
+.page_contents {
   padding: 50px 0;
-  box-sizing: border-box;
 }
 
 .menu_introduce_board {

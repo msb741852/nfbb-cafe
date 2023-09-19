@@ -5,6 +5,12 @@
   padding: 0;
   box-sizing: content-box;
 }
+#coffee_beans_container .page_contents {
+  box-sizing: border-box;
+  display: flex;
+
+  justify-content: center;
+}
 .coffee_beans_list {
   display: flex;
   flex-direction: column;

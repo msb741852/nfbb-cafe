@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,7 +7,7 @@
     <title>NFBB COFFEE ROASTERS</title>
     <link rel="stylesheet" href="../style/reset.css" />
     <link rel="stylesheet" href="../style/common.css" />
-    <link rel="stylesheet" href="../style/menu_introduce.css" />
+    <link rel="stylesheet" href="../style/about.css" />
     <script
       src="https://kit.fontawesome.com/57b67e461c.js"
       crossorigin="anonymous"
@@ -34,7 +34,7 @@
                 </ul>
               </div>
             </li>
-            <li class="navbar_item"><a href="./about.html">about</a></li>
+            <li class="navbar_item"><a href="#">about</a></li>
             <li class="navbar_item">
               <a href="#">login</a>
             </li>
@@ -48,15 +48,28 @@
         <div class="detail_menu_board"></div>
       </header>
       <main class="container page_container">
-        <div class="page_header inner_1200">MENU</div>
-        <div class="page_contents inner_1200">
-          <div class="menu_introduce_board">
-            <div class="tab_btn_container">
-              <div class="tab_btn">hand-drip</div>
-              <div class="tab_btn">espresso</div>
-              <div class="tab_btn">non-coffee</div>
-              <div class="tab_btn">tea</div>
+        <div class="page_header inner_1200">ABOUT</div>
+        <div class="page_contents inner_1200" id="about_container">
+          <div class="cafe_info_container">
+            <div class="cafe_img_box">
+              <img src="../img/about.JPG" alt="about_img" />
             </div>
+            <div class="cafe_info_text_container">
+              <div class="day_off_text">매주 금요일 휴무</div>
+              <div class="open_info_text">
+                <div>월, 화, 수, 목 8시 - 19시</div>
+                <div>토, 일 & 공휴일 10시 - 20시</div>
+              </div>
+              <div class="cafe_address_text">
+                경기도 광주시 경안안길 20-6 1층
+              </div>
+              <div class="cafe_tel_number_text">TEL. 031-763-0206</div>
+              <div class="instagram_name">@NFBB_COFFEE_ROASTERS</div>
+            </div>
+          </div>
+          <div class="map_container">
+            <div class="map_header">찾아오시는 길</div>
+            <div class="map_contents" id="map"></div>
           </div>
         </div>
       </main>
@@ -72,9 +85,13 @@
         </div>
       </footer>
     </div>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e4ac5c81d1064726eb7599b49e50cf40"
+    ></script>
+    <script src="../script/map.js"></script>
     <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script defer src="../script/dummy.js"></script>
     <script defer src="../script/common.js"></script>
-    <script defer src="../script/menu_introduce.js"></script>
   </body>
 </html>

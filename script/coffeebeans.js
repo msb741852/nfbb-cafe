@@ -6,6 +6,7 @@ $(document).ready(() => {
       overflow: "all",
       padding: "100px",
     });
+    console.log(ul_height);
   }, 1000);
 
   for (let i = 0; i < coffee_beans.length; i++) {
