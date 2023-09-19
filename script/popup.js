@@ -3,9 +3,22 @@ $(document).ready(() => {
   // cookie 확인
 
   const cookies = document.cookie;
-  if (cookies.includes("popup")) {
-    // 'popup'을 포함한 쿠키가 있다면 팝업 삭제
-    $(".pan").remove();
+  const popup_el = `
+                    <div class="pan">
+                    <div class="slide_container">
+                      <ul class="slide_list"></ul>
+                      <div class="popup_slide_btn btn_popup_L">&lt</div>
+                      <div class="popup_slide_btn btn_popup_R">&gt</div>
+                    </div>
+                    <div class="btn_container">
+                      <div class="popup_btn btn_oneday_close">오늘 하루 닫기</div>
+                      <div class="popup_btn btn_close">닫기</div>
+                    </div>
+                  </div>
+                  `;
+
+  if (!cookies.includes("popup")) {
+    $("body").append(popup_el);
   }
   let hour_24 = 1 * 60 * 60 * 24;
   $(".btn_oneday_close").click(() => {
