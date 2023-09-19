@@ -1,4 +1,32 @@
 $(document).ready(() => {
+  // ======================= 요소 생성 시작 =========================
+
+  //팝업창 아이템
+  for (let i = 0; i < popup_img.length; i++) {
+    let popup_item = `<li class="slide_item">
+                    <img src="./img/${popup_img[i]}" alt="popup_img" />
+                  </li>`;
+    $(".slide_list").append(popup_item);
+  }
+
+  // 메뉴 소개 아이템
+  for (let i = 0; i < 10; i++) {
+    let menu_introduce_item = `
+                <li class="menu_item" id="menu${i + 1}">
+                  <img src="./img/${
+                    menu_introduce[i].img_src
+                  }" alt="menu_img" />
+                  <div class="menu_info">
+                    <div class="menu_title">${menu_introduce[i].menuName}</div>
+                    <div class="menu_price">${menu_introduce[i].price}</div>
+                  </div>
+                </li>
+                `;
+    $(".menu_introduce_list").append(menu_introduce_item);
+  }
+
+  // ======================= 요소 생성 끝 =========================
+
   let header_height = $(".header").innerHeight();
   let video_section_top_gap = $(".video_section").offset().top;
   let video_height = $(".video_section").height();
@@ -77,7 +105,7 @@ $(document).ready(() => {
     }
   });
 
-  //==================== menu slide ================================
+  //==================== menu_introduce slide ================================
 
   let menu_item_width = $(".menu_item").width();
   for (let i = 0; i < $(".menu_item").length; i++) {
@@ -94,7 +122,7 @@ $(document).ready(() => {
 
   auto_slide();
 
-  $(".btn_next").click(() => {
+  $(".btn_next").on("click", () => {
     prevent_btn(slide_timer);
     slide_all("R", `-=${menu_item_width}`);
     slide_init(
@@ -104,7 +132,7 @@ $(document).ready(() => {
     );
     curr_slide_no += 1;
   });
-  $(".btn_prev").click(() => {
+  $(".btn_prev").on("click", () => {
     prevent_btn(slide_timer);
     // 현재 슬라이드 번호 -1 left: -width
     slide_init("L", (curr_slide_no - 1) % menu_item_cnt, menu_item_width);
@@ -113,14 +141,12 @@ $(document).ready(() => {
     curr_slide_no -= 1;
   });
 
-  $(".menu_list").hover(
-    () => {
-      clearInterval(slide_interval);
-    },
-    () => {
-      auto_slide();
-    }
-  );
+  $(".menu_introduce_list").on("mouseenter", () => {
+    clearInterval(slide_interval);
+  });
+  $(".menu_introduce_list").on("mouseleave", () => {
+    auto_slide();
+  });
 
   function slide_init(direction, eq_value, left_value) {
     if (direction == "R") {

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NFBB COFFEE ROASTERS</title>
     <link rel="stylesheet" href="./style/reset.css" />
-    <link rel="stylesheet" href="./style/common.css">
+    <link rel="stylesheet" href="./style/common.css" />
     <link rel="stylesheet" href="./style/main_style.css" />
-    <link rel="stylesheet" href="./style/popup.css">
+    <link rel="stylesheet" href="./style/popup.css" />
     <script
       src="https://kit.fontawesome.com/57b67e461c.js"
       crossorigin="anonymous"
@@ -17,20 +17,7 @@
   <body>
     <div class="pan">
       <div class="slide_container">
-        <ul class="slide_list">
-          <li class="slide_item">
-            <img src="./img/popup_img01.jpeg" alt="popup_img" />
-          </li>
-          <li class="slide_item">
-            <img src="./img/popup_img02.jpeg" alt="popup_img" />
-          </li>
-          <li class="slide_item">
-            <img src="./img/popup_img03.jpeg" alt="popup_img" />
-          </li>
-          <li class="slide_item">
-            <img src="./img/popup_img04.jpeg" alt="popup_img" />
-          </li>
-        </ul>
+        <ul class="slide_list"></ul>
         <div class="popup_slide_btn btn_popup_L">&lt</div>
         <div class="popup_slide_btn btn_popup_R">&gt</div>
       </div>
@@ -47,8 +34,10 @@
         </div>
         <nav class="navbar">
           <ul class="navbar_list">
-            <li class="navbar_item"><a href="#">menu</a></li>
             <li class="navbar_item">
+              <a href="./pages/menu_introduce.html">menu</a>
+            </li>
+            <!-- <li class="navbar_item">
               <a href="#">order</a>
               <div class="detail_menu">
                 <ul class="detail_menu_list">
@@ -56,17 +45,19 @@
                   <li class="detail_menu_item"><a href="#">주문목록</a></li>
                 </ul>
               </div>
-            </li>
+            </li> -->
             <li class="navbar_item"><a href="#">about</a></li>
-            <li class="navbar_item"><a href="#">login</a>
-              <div class="detail_menu">
+            <li class="navbar_item">
+              <a href="#">login</a>
+              <!-- <div class="detail_menu">
                 <ul class="detail_menu_list">
                   <li class="detail_menu_item"><a href="#">주문하기</a></li>
                   <li class="detail_menu_item"><a href="#">주문목록</a></li>
                   <li class="detail_menu_item"><a href="#">주문하기</a></li>
                   <li class="detail_menu_item"><a href="#">주문목록</a></li>
                 </ul>
-              </div></li>
+              </div> -->
+            </li>
             <li class="navbar_item">
               <a href="#"
                 ><i class="fa-brands fa-instagram" style="color: #000000"></i
@@ -78,16 +69,15 @@
       </header>
       <main class="container">
         <section class="video_section">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/j_AqQyMPABs?si=MLICGmo6npmC-CJj&amp;controls=0&autoplay=1&mute=1&playlist=j_AqQyMPABs&loop=1&rel=0"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/j_AqQyMPABs?si=MLICGmo6npmC-CJj&amp;controls=0&autoplay=1&mute=1&playlist=j_AqQyMPABs&loop=1&rel=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </section>
         <div class="inner_1200">
           <section class="simple_menu_section">
@@ -186,68 +176,18 @@
               </li>
             </ul>
           </section>
-          <section class="menu_section">
+          <section class="menu_introduce_section">
             <div class="section_header">
               <div class="section_title">menu</div>
               <div class="btn_viewAdd">
-                <a href="#"> 더보기 </a>
+                <a href="./pages/menu_introduce.html"> 더보기 </a>
               </div>
             </div>
             <div class="section_container">
-            <ul class="menu_list">
-              <li class="menu_item" id="menu01">
-                <img src="./img/menu01.png" alt="menu_img" />
-                <div class="menu_info">
-                  <div class="menu_title">수박 주스</div>
-                  <div class="menu_price">5,000</div>
-                </div>
-              </li>
-              <li class="menu_item" id="menu02">
-                <img src="./img/menu02.png" alt="menu_img" />
-                <div class="menu_info">
-                  <div class="menu_title">수박 빙수 </div>
-                  <div class="menu_price">5,500</div>
-                </div>
-              </li>
-              <li class="menu_item" id="menu03">
-                <img src="./img/menu03.png" alt="menu_img" />
-                <div class="menu_info">
-                  <div class="menu_title">리치 복숭아 에이드</div>
-                  <div class="menu_price">5,000</div>
-                </div>
-              </li>
-              <li class="menu_item" id="menu04">
-                <img src="./img/menu04.png" alt="menu_img" />
-                <div class="menu_info">
-                  <div class="menu_title">아포가토</div>
-                  <div class="menu_price">6,000</div>
-                </div>
-              </li>
-              <li class="menu_item" id="menu05">
-                <img src="./img/menu05.png" alt="menu_img" />
-                <div class="menu_info">
-                  <div class="menu_title">구름 스무디</div>
-                  <div class="menu_price">6,000</div>
-                </div>
-              </li>
-              <li class="menu_item" id="menu06">
-                <img src="./img/menu06.png" alt="menu_img" />
-                <div class="menu_info">
-                  <div class="menu_title">망고 스무디</div>
-                  <div class="menu_price">6,000</div>
-                </div>
-              </li>
-              <li class="menu_item" id="menu07">
-                <img src="./img/menu07.png" alt="menu_img" />
-                <div class="menu_info">
-                  <div class="menu_title">콜드 웨이브</div>
-                  <div class="menu_price">5,000</div>
-                </div>
-              </li>
-            </ul>
-            <div class="slide_btn btn_prev">&lt</div>
-            <div class="slide_btn btn_next">&gt</div>
-          </div>
+              <ul class="menu_introduce_list"></ul>
+              <div class="slide_btn btn_prev">&lt</div>
+              <div class="slide_btn btn_next">&gt</div>
+            </div>
           </section>
           <section class="store_section">
             <div class="section_header">
@@ -256,20 +196,16 @@
             <ul class="store_list">
               <li class="store_item">
                 <div class="store_item_img_box">
-                  <img src="./img/store_01.jpeg" alt="bag_img">
+                  <img src="./img/store_01.jpeg" alt="bag_img" />
                 </div>
-                <div class="store_item_title">
-                  벨벳 니팅백 (orange)
-                </div>
+                <div class="store_item_title">벨벳 니팅백 (orange)</div>
                 <div class="store_item_price">30,000won</div>
               </li>
               <li class="store_item">
                 <div class="store_item_img_box">
-                  <img src="./img/store_02.jpeg" alt="bag_img">
+                  <img src="./img/store_02.jpeg" alt="bag_img" />
                 </div>
-                <div class="store_item_title">
-                  벨벳 니팅백 (white)
-                </div>
+                <div class="store_item_title">벨벳 니팅백 (white)</div>
                 <div class="store_item_price">30,000won</div>
               </li>
             </ul>
@@ -278,21 +214,21 @@
       </main>
       <footer class="footer">
         <div class="inner_1200">
-          <div class="br_box">영업시간: 월, 화, 수, 목, 8시 - 19시 / 토, 일 & 공휴일 10시 - 20시</div>
           <div class="br_box">
-            경기도 광주시 경안안길 20-6 1층 031-763-0206
+            영업시간: 월, 화, 수, 목, 8시 - 19시 / 토, 일 & 공휴일 10시 - 20시
           </div>
+          <div class="br_box">경기도 광주시 경안안길 20-6 1층 031-763-0206</div>
           <div class="br_box">
             ⓒ 2023 nfbb coffee roasters Company. All Rights Reserved.
           </div>
-        </div>
         </div>
       </footer>
     </div>
 
     <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script defer src="./script/popup.js"></script>
+    <script defer src="./script/dummy.js"></script>
     <script defer src="./script/common.js"></script>
     <script defer src="./script/main.js"></script>
-    <script defer src="./script/popup.js"></script>
   </body>
 </html>

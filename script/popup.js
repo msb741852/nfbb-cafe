@@ -9,8 +9,9 @@ $(document).ready(() => {
   }
   let hour_24 = 1 * 60 * 60 * 24;
   $(".btn_oneday_close").click(() => {
-    document.cookie = `name=popup;max-age=${hour_24}`;
+    document.cookie = `popup=true;max-age=${hour_24}`;
     $(".pan").remove();
+    console.log("sdsdfs");
   });
 
   $(".btn_close").click(() => {
