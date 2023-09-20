@@ -28,7 +28,7 @@
   height: calc(50% - 10px);
   border: none;
   border-radius: 12px;
-  background-color: #ededed;
+  background-color: var(--gray-color);
   padding: 0 20px;
   font-size: 20px;
   font-family: "BMHannaPro";
@@ -47,6 +47,7 @@
   color: #fff;
   text-align: center;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .btn_container {
@@ -62,4 +63,11 @@
   background-color: #333;
   color: #fff;
   border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.login_page_btn a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }

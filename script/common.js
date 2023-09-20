@@ -7,21 +7,17 @@ $(document).ready(function () {
   }
   // ================= 쿠키 관련 시작 ==================
   // // cookie 확인
-
   const cookies = document.cookie.split(";");
   let login_chk = false;
   for (let i = 0; i < cookies.length; i++) {
     if (cookies[i].includes("login")) {
       // login을 포함하고 있는 쿠키에서 "="를 기준으로 배열로 나누고, 1번째 자리에 있는 값을 가져와서 "true"랑 비교해서 같지 않다면 false를 리턴해줌.
       login_chk = cookies[i].split("=")[1] === "true";
-      console.log(cookies[i].split("=")[1]);
-      break;
     }
   }
 
   let header_menu_item = "";
   if (!login_chk) {
-    console.log("기본");
     // 'login'을 포함한 쿠키(세션)가 없다면 기본 헤더 메뉴 header_menu_item에 넣어주기
     header_menu_item = `
                             <li class="navbar_item">
@@ -94,14 +90,8 @@ $(document).ready(function () {
                             </li>
     `;
   }
-  // <a href="${domain}/index.html">로그아웃</a>
   // header_menu_item에 저장한 메뉴들을 navbar_list에 배치 해주기
   $(".navbar_list").append(header_menu_item);
-  let hour_24 = 1 * 60 * 60 * 24;
-  $(".btn_oneday_close").click(() => {
-    document.cookie = `popup=true;max-age=${hour_24}`;
-    $(".pan").remove();
-  });
 
   $("#btn_logout").on("click", () => {
     document.cookie = "login=false";
