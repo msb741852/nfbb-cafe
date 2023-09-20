@@ -244,8 +244,9 @@ const coffee_beans = [
 const user_info = [
   {
     id: "admin",
-    password: "root",
+    password: "asdfasdf",
     name: "운영자",
     email: "admin@kh.com",
+    phone: "010-1234-1234",
   },
 ];

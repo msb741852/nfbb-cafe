@@ -69,7 +69,7 @@ $(document).ready(function () {
                               <div class="detail_menu">
                                 <ul class="detail_menu_list">
                                   <li class="detail_menu_item">
-                                    <a href="#">내 정보 변경</a>
+                                    <a href="${domain}/pages/edit_profile.html">내 정보 변경</a>
                                   </li>
                                   <li class="detail_menu_item">
                                     <a href="#">주문 목록</a>
@@ -94,7 +94,7 @@ $(document).ready(function () {
   $(".navbar_list").append(header_menu_item);
 
   $("#btn_logout").on("click", () => {
-    document.cookie = "login=false";
+    document.cookie = "login=false;path=/";
   });
 
   $(".btn_close").click(() => {

@@ -1,4 +1,17 @@
 $(document).ready(() => {
+  $("#uPhone").val(user_info[0].phone);
+  $("#uEmail").val(user_info[0].email);
+
+  for (let i = 0; i < $(".input_container").length; i++) {
+    if ($(".input_container").eq(i).children("input").val().length != 0) {
+      $(".input_container")
+        .eq(i)
+        .children("input")
+        .next()
+        .addClass("focus_input");
+    }
+  }
+
   $(".input_container input").focus(function () {
     $(this).next().addClass("focus_input");
   });
@@ -59,26 +72,8 @@ $(document).ready(() => {
       }
     }
   });
-  // ===================== 비밀번호 관련 끝 =======================
 
-  // ==================== 전화번호 관련 시작 ======================
-  // 48 ~ 57 , 96 ~ 105
-
-  // 문자 못넣게 만듬 => 하이픈 넣는 것만 넣으면 됨
-  $("#uPhone").keydown(function (event) {
-    if (
-      !(
-        (48 <= event.keyCode && event.keyCode <= 57) ||
-        (96 <= event.keyCode && event.keyCode <= 105)
-      )
-    ) {
-      event.preventDefault();
-    }
-  });
-
-  // ==================== 전화번호 관련 끝 ======================
-
-  $("#btn_join").click((event) => {
+  $("#btn_edit_profile").click((event) => {
     // 빈 칸 확인
     let input_el = $(".input_container input");
     for (let i = 0; i < input_el.length; i++) {
@@ -88,20 +83,57 @@ $(document).ready(() => {
         $(".input_container").eq(i).removeClass("input_empty");
       }
     }
-    let curr_email = $("#eMail").val();
-    if (
-      !(
-        curr_email.includes("@") &&
-        (curr_email.split(".")[1] == "com" ||
-          curr_email.split(".")[1] == "co" ||
-          curr_email.split(".")[1] == "net")
-      )
-    ) {
-      event.preventDefault();
-    }
-
     if (input_el.parent().hasClass("input_empty")) {
       event.preventDefault();
     }
+
+    let curr_pw = $("#uPw").val();
+    let curr_pwChk = $("#uPwChk").val();
+    let result_el = "";
+    // input들이 비어있지 않다면
+    if (curr_pw.length >= 8 && curr_pwChk.length >= 8) {
+      if (curr_pw == curr_pwChk) {
+        if (curr_pw == user_info[0].password) {
+          result_el = `
+                        <div class="modal_box">
+                          <div class="icon_box">
+                            <i class="fa-solid fa-circle-xmark" style="color: #df2626"></i>
+                          </div>
+                          <div class="modal_contents_container">
+                            <span class="result_text"
+                              >이전에 사용하시던 비밀번호입니다.<br> 다른 비밀번호를 사용해주세요!</span
+                            >
+                            <div class="btn_close">확인</div>
+                          </div>
+                        </div>
+                      `;
+        } else if (curr_pw != user_info[0].password) {
+          result_el = `
+                        <div class="modal_box">
+                          <div class="icon_box">
+                            <i class="fa-solid fa-circle-check" style="color: #4ab54c"></i>
+                          </div>
+                          <div class="modal_contents_container">
+                            <span class="result_text">회원님의 비밀번호를 수정하였습니다.</span>
+                            <div class="btn_close">확인</div>
+                          </div>
+                        </div>
+                      `;
+        }
+      }
+      $(".modal_container").eq(0).append(result_el);
+      $(".modal_container").eq(0).css({
+        opacity: 1,
+        pointerEvents: "all",
+      });
+    }
+  });
+
+  $(document).on("click", ".btn_close", () => {
+    $(".modal_box").remove();
+    $(".modal_container").css({
+      opacity: 0,
+      pointerEvents: "none",
+    });
   });
 });

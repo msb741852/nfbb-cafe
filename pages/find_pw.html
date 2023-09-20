@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../style/reset.css" />
     <link rel="stylesheet" href="../style/common.css" />
     <link rel="stylesheet" href="../style/form_common.css" />
-    <link rel="stylesheet" href="../style/login.css" />
+    <link rel="stylesheet" href="../style/findPw.css" />
     <script
       src="https://kit.fontawesome.com/57b67e461c.js"
       crossorigin="anonymous"
@@ -26,34 +26,31 @@
         <div class="detail_menu_board"></div>
       </header>
       <main class="container page_container">
-        <div class="page_header inner_1200">LOGIN</div>
-        <div class="page_contents inner_1200" id="login_container">
-          <form action="../index.html" method="get">
-            <div class="input_btn_container">
-              <div class="input_container_outer">
-                <div class="input_container">
-                  <input type="text" name="uId" id="uId" required />
-                  <span class="placeholder_span">id</span>
-                </div>
-                <div class="input_container">
-                  <input type="password" name="uPw" id="uPw" required />
-                  <span class="placeholder_span">password</span>
-                </div>
-              </div>
-              <input type="submit" class="btn_submit" value="로그인" />
+        <div class="page_header inner_1200">FIND PASSWORD</div>
+        <div class="page_contents inner_1200" id="findPw_container">
+          <form action="javascript:void(0)">
+            <div class="input_container">
+              <input
+                type="text"
+                name="uId"
+                id="uId"
+                required
+                autocomplete="off"
+              />
+              <span class="placeholder_span">id</span>
             </div>
+            <div class="input_container">
+              <input
+                type="email"
+                name="uEmail"
+                id="uEmail"
+                required
+                autocomplete="off"
+              />
+              <span class="placeholder_span">e-mail</span>
+            </div>
+            <input type="submit" value="비밀번호 찾기" id="btn_find_pw" />
           </form>
-          <div class="btn_container">
-            <div class="login_page_btn btn_join">
-              <a href="./join.html">회원가입</a>
-            </div>
-            <div class="login_page_btn btn_find_id">
-              <a href="./find_id.html">아이디 찾기</a>
-            </div>
-            <div class="login_page_btn btn_find_pw">
-              <a href="./find_pw.html"> 비밀번호 찾기</a>
-            </div>
-          </div>
         </div>
       </main>
       <footer class="footer">
@@ -73,6 +70,6 @@
     <script defer src="../script/common.js"></script>
     <script defer src="../script/dummy.js"></script>
     <script defer src="../script/form_common.js"></script>
-    <script defer src="../script/login.js"></script>
+    <script defer src="../script/findPw.js"></script>
   </body>
 </html>

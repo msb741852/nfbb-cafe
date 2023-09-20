@@ -1,4 +1,7 @@
 /* ====== COMMON ========= */
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
 @font-face {
   font-family: "HoltWoodOneSC";
   src: url(../font/HoltwoodOneSC-Regular.ttf);

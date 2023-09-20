@@ -1,6 +1,9 @@
 .placeholder_span {
   font-family: "HoltWoodOneSC" !important;
 }
+#wrap input[type="password"] {
+  font-family: sans-serif;
+}
 
 .input_container {
   position: relative;
@@ -26,12 +29,46 @@
   border: none;
 }
 
+.user_pw_empty,
+.user_pwChk_false,
+.user_pwChk_true,
 .input_empty {
   position: relative;
 }
+.user_pw_empty::after {
+  content: "비밀번호를 먼저 입력해주세요.";
+  position: absolute;
+  transform: translateY(-100%);
+  top: -5px;
+  right: 0;
+  font-family: "BMHannaPro";
+  font-size: 10px;
+  color: #f43b3b;
+}
+.user_pwChk_false::after {
+  content: "비밀번호를 확인해주세요.";
+  position: absolute;
+  transform: translateY(-100%);
+  top: -5px;
+  right: 0;
+  font-family: "BMHannaPro";
+  font-size: 10px;
+  color: #f43b3b;
+}
+
+.user_pwChk_true::after {
+  content: "비밀번호가 일치합니다.";
+  position: absolute;
+  transform: translateY(-100%);
+  top: -5px;
+  right: 0;
+  font-family: "BMHannaPro";
+  font-size: 10px;
+  color: #a4ff9a;
+}
 
 .input_empty::after {
-  content: "입력란을 채워주세요!";
+  content: "입력란은 채워주세요!";
   position: absolute;
   transform: translateY(-100%);
   top: -5px;
