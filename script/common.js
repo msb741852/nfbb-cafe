@@ -1,7 +1,12 @@
 $(document).ready(function () {
+  let domain = "";
+  domain = location.href.slice(0, location.href.indexOf("/", 8));
+  if (location.href.includes("https")) {
+    //https를 포함하고 있는 경우
+    domain += "/nfbb-cafe";
+  }
   // ================= 쿠키 관련 시작 ==================
-  // cookie 확인
-  let domain = location.href.slice(0, location.href.indexOf("/", 7));
+  // // cookie 확인
   console.log(domain);
 
   const cookies = document.cookie;
@@ -51,7 +56,7 @@ $(document).ready(function () {
                             </li>
                             <li class="navbar_item"><a href="#">order</a></li>
                             <li class="navbar_item"><a href="#">store</a></li>
-                            <li class="navbar_item"><a href="./pages/about.html">about</a></li>
+                            <li class="navbar_item"><a href="${domain}/pages/about.html">about</a></li>
                             <li class="navbar_item" id="user_li">
                               <a href="#">
                               <i class="fa-solid fa-user" style="color: #000000;"></i>
