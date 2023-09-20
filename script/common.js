@@ -2,6 +2,7 @@ $(document).ready(function () {
   // ================= 쿠키 관련 시작 ==================
   // cookie 확인
   let domain = location.href.slice(0, location.href.indexOf("/", 7));
+  console.log(domain);
 
   const cookies = document.cookie;
   let header_menu_item = "";
