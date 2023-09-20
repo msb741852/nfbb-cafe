@@ -1,0 +1,96 @@
+.placeholder_span {
+  font-family: "HoltWoodOneSC" !important;
+}
+
+.input_container {
+  position: relative;
+}
+.placeholder_span {
+  content: "name";
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: #777;
+  transition: all 0.5s;
+  pointer-events: none;
+}
+.placeholder_span.focus_input {
+  font-size: 12px;
+  top: -5px;
+  left: 10px;
+  transform: translateY(-100%);
+}
+
+.page_header {
+  border: none;
+}
+
+.input_empty {
+  position: relative;
+}
+
+.input_empty::after {
+  content: "입력란을 채워주세요!";
+  position: absolute;
+  transform: translateY(-100%);
+  top: -5px;
+  right: 0;
+  font-family: "BMHannaPro";
+  font-size: 10px;
+  color: #f43b3b;
+}
+
+/* ===== modal ===== */
+.modal_container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal_box {
+  width: 600px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 12px;
+}
+.icon_box {
+  font-size: 50px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.modal_contents_container {
+  height: 100%;
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  font-family: "BMHannaPro";
+}
+.result_text {
+  font-size: 20px;
+  text-align: center;
+  line-height: 25px;
+}
+.btn_close {
+  padding: 10px 30px;
+  border-radius: 12px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+.btn_close:active {
+  background-color: #ccc;
+}

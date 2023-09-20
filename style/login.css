@@ -13,38 +13,42 @@
 
 .input_btn_container {
   height: 150px;
-  line-height: 150px;
   display: flex;
   gap: 20px;
 }
+.input_container_outer {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .input_container {
   width: 330px;
-  height: 100%;
+  height: calc(50% - 10px);
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .input_container input {
-  height: calc(50% - 10px);
-  border: none;
-  border-radius: 12px;
-  background-color: var(--gray-color);
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
   padding: 0 20px;
-  font-size: 20px;
+  box-sizing: border-box;
   font-family: "BMHannaPro";
-}
-.input_container input::placeholder {
-  font-family: "HoltWoodOneSC";
-  content: "";
+  font-size: 20px;
+  border: none;
+  background: var(--gray-color);
 }
 .input_container input[type="password"] {
   font-family: sans-serif;
 }
-.btn_submit {
+.page_contents .btn_submit {
   width: 100px;
   border-radius: 12px;
   border: none;
-  background-color: #333;
+  background: #333;
   color: #fff;
   text-align: center;
   font-size: 20px;

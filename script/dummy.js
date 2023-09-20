@@ -240,3 +240,12 @@ const coffee_beans = [
     img_src: "coffeeBeans_black.jpeg",
   },
 ];
+
+const user_info = [
+  {
+    id: "admin",
+    password: "root",
+    name: "운영자",
+    email: "admin@kh.com",
+  },
+];
