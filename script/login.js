@@ -5,7 +5,6 @@ $(document).ready(() => {
   const cookies = document.cookie;
   $(".btn_submit").click(() => {
     document.cookie = `login=true;path=/`;
-    console.log("sdfsdf");
   });
 
   // ================= 쿠키 관련 끝 ==================

@@ -1,6 +1,7 @@
 $(document).ready(function () {
   // ================= 쿠키 관련 시작 ==================
   // cookie 확인
+  let domain = location.href.slice(0, location.href.indexOf("/", 7));
 
   const cookies = document.cookie;
   let header_menu_item = "";
@@ -8,25 +9,25 @@ $(document).ready(function () {
     // 'login'을 포함한 쿠키(세션)가 없다면 기본 헤더 메뉴 header_menu_item에 넣어주기
     header_menu_item = `
                             <li class="navbar_item">
-                              <a href="./pages/menu_introduce.html">menu</a>
+                              <a href="${domain}/pages/menu_introduce.html">menu</a>
                               <div class="detail_menu">
                                 <ul class="detail_menu_list">
                                   <li class="detail_menu_item">
-                                    <a href="./pages/menu_introduce.html">메뉴 소개</a>
+                                    <a href="${domain}/pages/menu_introduce.html">메뉴 소개</a>
                                   </li>
                                   <li class="detail_menu_item">
-                                    <a href="./pages/coffeebeans.html">원두 소개</a>
+                                    <a href="${domain}/pages/coffeebeans.html">원두 소개</a>
                                   </li>
                                 </ul>
                               </div>
                             </li>
                             <li class="navbar_item"><a href="#">store</a></li>
-                            <li class="navbar_item"><a href="./pages/about.html">about</a></li>
+                            <li class="navbar_item"><a href="${domain}/pages/about.html">about</a></li>
                             <li class="navbar_item">
-                              <a href="#">login</a>
+                              <a href="${domain}/pages/login.html">login</a>
                             </li>
                             <li class="navbar_item">
-                              <a href="#"
+                              <a href="https://www.instagram.com/nfbb_coffee_roasters/"
                                 ><i class="fa-brands fa-instagram" style="color: #000000"></i
                               ></a>
                             </li>
@@ -35,25 +36,40 @@ $(document).ready(function () {
     // 'login'을 포함한 쿠키(세션)가 있다면 로그인 헤더 메뉴 header_menu_item에 넣어주기
     header_menu_item = `
                             <li class="navbar_item">
-                              <a href="./pages/menu_introduce.html">menu</a>
+                              <a href="${domain}/pages/menu_introduce.html">menu</a>
                               <div class="detail_menu">
                                 <ul class="detail_menu_list">
                                   <li class="detail_menu_item">
-                                    <a href="./pages/menu_introduce.html">메뉴 소개</a>
+                                    <a href="${domain}/pages/menu_introduce.html">메뉴 소개</a>
                                   </li>
                                   <li class="detail_menu_item">
-                                    <a href="./pages/coffeebeans.html">원두 소개</a>
+                                    <a href="${domain}/pages/coffeebeans.html">원두 소개</a>
                                   </li>
                                 </ul>
                               </div>
                             </li>
+                            <li class="navbar_item"><a href="#">order</a></li>
                             <li class="navbar_item"><a href="#">store</a></li>
                             <li class="navbar_item"><a href="./pages/about.html">about</a></li>
-                            <li class="navbar_item">
-                              <a href="#"><i class="fa-solid fa-user" style="color: #000000;"></i></a>
+                            <li class="navbar_item" id="user_li">
+                              <a href="#">
+                              <i class="fa-solid fa-user" style="color: #000000;"></i>
+                              <div class="detail_menu">
+                                <ul class="detail_menu_list">
+                                  <li class="detail_menu_item">
+                                    <a href="#">내 정보 변경</a>
+                                  </li>
+                                  <li class="detail_menu_item">
+                                    <a href="#">주문 목록</a>
+                                  </li>
+                                  <li class="detail_menu_item">
+                                    <a href="#">포인트 조회</a>
+                                  </li>
+                                </ul>
+                              </div></a>
                             </li>
                             <li class="navbar_item">
-                              <a href="#"
+                              <a href="https://www.instagram.com/nfbb_coffee_roasters/""
                                 ><i class="fa-brands fa-instagram" style="color: #000000"></i
                               ></a>
                             </li>
