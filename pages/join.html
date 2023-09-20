@@ -7,7 +7,7 @@
     <title>NFBB COFFEE ROASTERS</title>
     <link rel="stylesheet" href="../style/reset.css" />
     <link rel="stylesheet" href="../style/common.css" />
-    <link rel="stylesheet" href="../style/login.css" />
+    <link rel="stylesheet" href="../style/join.css" />
     <script
       src="https://kit.fontawesome.com/57b67e461c.js"
       crossorigin="anonymous"
@@ -26,13 +26,75 @@
       </header>
       <main class="container page_container">
         <div class="page_header inner_1200">JOIN</div>
-        <div class="page_contents inner_1200" id="login_container">
-          <input type="text" />
-          <input type="text" />
-          <input type="text" />
-          <input type="text" />
-          <input type="text" />
-          <input type="text" />
+        <div class="page_contents inner_1200" id="join_container">
+          <form action="./login.html">
+            <div class="input_container">
+              <input
+                type="text"
+                name="uId"
+                id="uId"
+                required
+                autocomplete="off"
+              />
+              <span class="placeholder_span">id</span>
+            </div>
+            <div class="input_container">
+              <input
+                type="password"
+                name="uPw"
+                id="uPw"
+                minlength="8"
+                maxlength="16"
+                required
+                autocomplete="off"
+              />
+              <span class="placeholder_span">password</span>
+            </div>
+            <div class="input_container">
+              <input
+                type="password"
+                name="uPwChk"
+                id="uPwChk"
+                minlength="8"
+                maxlength="16"
+                required
+                autocomplete="off"
+              />
+              <span class="placeholder_span">password-check</span>
+            </div>
+            <div class="input_container">
+              <input
+                type="text"
+                name="uName"
+                id="uName"
+                required
+                autocomplete="off"
+              />
+              <span class="placeholder_span">name</span>
+            </div>
+            <div class="input_container">
+              <input
+                type="email"
+                name="eMail"
+                id="eMail"
+                required
+                autocomplete="off"
+              />
+              <span class="placeholder_span">e-mail</span>
+            </div>
+            <div class="input_container">
+              <input
+                type="tel"
+                name="uPhone"
+                id="uPhone"
+                required
+                autocomplete="off"
+                maxlength="13"
+              />
+              <span class="placeholder_span">phone-number</span>
+            </div>
+            <input type="submit" value="회원가입" id="btn_join" />
+          </form>
         </div>
       </main>
       <footer class="footer">
