@@ -158,4 +158,25 @@ $(document).ready(() => {
       $(".btn_next").trigger("click");
     }, slide_timer + 1000);
   }
+
+  $(".prevent_event > a").click(function (event) {
+    event.preventDefault();
+    if (getCookie()) {
+      location.href = $(this).attr("href");
+    } else {
+      location.href = "../pages/login.html";
+    }
+  });
+  function getCookie() {
+    let cookies_arr = document.cookie.split(";");
+    for (let i = 0; i < cookies_arr.length; i++) {
+      if (cookies_arr[i].includes("login")) {
+        if (cookies_arr[i].trim().split("=")[1] == "true") {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+  }
 });
