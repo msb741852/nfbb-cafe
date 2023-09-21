@@ -5,7 +5,6 @@
 }
 .page_contents > div {
   width: 50%;
-  height: 746px;
 }
 
 /* ===== order-container ===== */
@@ -125,7 +124,7 @@
 /* ====== menu_list ===== */
 .menu_ul_outer {
   width: calc(100% - 25px);
-  height: 100%;
+  height: calc(100% - 36px);
   margin: 0 auto;
   background: #f9f9f9;
   border-radius: 10px;
