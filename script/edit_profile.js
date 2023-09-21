@@ -120,12 +120,12 @@ $(document).ready(() => {
                         </div>
                       `;
         }
+        $(".modal_container").eq(0).append(result_el);
+        $(".modal_container").eq(0).css({
+          opacity: 1,
+          pointerEvents: "all",
+        });
       }
-      $(".modal_container").eq(0).append(result_el);
-      $(".modal_container").eq(0).css({
-        opacity: 1,
-        pointerEvents: "all",
-      });
     }
   });
 

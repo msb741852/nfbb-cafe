@@ -75,4 +75,12 @@ $(document).ready(() => {
       });
     }
   });
+
+  $(document).on("click", ".btn_close", () => {
+    $(".modal_box").remove();
+    $(".modal_container").css({
+      opacity: 0,
+      pointerEvents: "none",
+    });
+  });
 });
