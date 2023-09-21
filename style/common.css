@@ -147,7 +147,7 @@ ul {
 
 /* ========== container ======== */
 .container {
-  min-height: calc(100vh - 264px);
+  min-height: calc(100vh - 160px);
   padding-top: 0;
 }
 .page_container {
@@ -168,7 +168,7 @@ ul {
   justify-content: center;
   gap: 20px;
   max-width: 1200px;
-  height: 200px;
+  height: 160px;
   font-family: "BMHannaPro";
 }
 .br_box {

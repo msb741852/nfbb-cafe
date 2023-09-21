@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFBB COFFEE ROASTERS</title>
+    <link rel="stylesheet" href="../style/reset.css" />
+    <link rel="stylesheet" href="../style/common.css" />
+    <link rel="stylesheet" href="../style/order.css" />
+    <script
+      src="https://kit.fontawesome.com/57b67e461c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <header class="header">
+        <div class="logo">
+          <a href="../index.html"> nfbb coffee roasters </a>
+        </div>
+        <nav class="navbar">
+          <ul class="navbar_list"></ul>
+        </nav>
+        <div class="detail_menu_board"></div>
+      </header>
+      <main class="container page_container">
+        <div class="page_header inner_1200">ORDER</div>
+        <div class="page_contents inner_1200">
+          <div class="order_section">
+            <div class="order_container">
+              <div class="order_container_header">
+                <div class="menu_name_text">menu-name</div>
+                <div class="price_text">price</div>
+                <div class="pcs_text">pcs</div>
+              </div>
+              <div class="order_list_container">
+                <ul class="order_list">
+                  <li class="order_item">
+                    <div class="item_menu_name">ice americano</div>
+                    <div class="item_menu_price">5000</div>
+                    <div class="item_menu_pcs_container">
+                      <div class="item_btn item_btn_minus">-</div>
+                      <span class="item_menu_pcs">1</span>
+                      <div class="item_btn item_btn_plus">+</div>
+                    </div>
+                  </li>
+                  <li class="order_item">
+                    <div class="item_menu_name">ice cafelatte</div>
+                    <div class="item_menu_price">5000</div>
+                    <div class="item_menu_pcs_container">
+                      <div class="item_btn item_btn_minus">-</div>
+                      <span class="item_menu_pcs">1</span>
+                      <div class="item_btn item_btn_plus">+</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="priceInfoAndBtn_container">
+              <div class="price_info_container">
+                <div class="can_point_text">사용 가능 포인트 : 7,000</div>
+                <div class="use_point_container">
+                  <span> 포인트 사용: </span
+                  ><input type="text" id="point_input" value="0" />
+                </div>
+                <div class="total_price">총액 : 20,000</div>
+                <div class="final_price">지불할 금액 : 20,000</div>
+              </div>
+              <div class="btn_order">주문하기</div>
+            </div>
+          </div>
+          <div class="menu_introduce_board">
+            <div class="tab_btn_container">
+              <div class="tab_btn">hand-drip</div>
+              <div class="tab_btn">espresso</div>
+              <div class="tab_btn">non-coffee</div>
+              <div class="tab_btn">tea</div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="inner_1200">
+          <div class="br_box">
+            영업시간: 월, 화, 수, 목, 8시 - 19시 / 토, 일 & 공휴일 10시 - 20시
+          </div>
+          <div class="br_box">경기도 광주시 경안안길 20-6 1층 031-763-0206</div>
+          <div class="br_box">
+            ⓒ 2023 nfbb coffee roasters Company. All Rights Reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script defer src="../script/dummy.js"></script>
+    <script defer src="../script/common.js"></script>
+    <script defer src="../script/order.js"></script>
+  </body>
+</html>

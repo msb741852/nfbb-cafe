@@ -20,17 +20,6 @@ $(document).ready(() => {
     $(".menu_introduce_board").append(
       `<div class='menu_list_container'></div>`
     );
-    if (i == 0) {
-      $(".menu_list_container").eq(0).addClass("menu_list_container_acitve");
-    }
-    let menu_genre_header = `
-                          <div class="menu_list_header">
-                            <div class="menu_genre">${curr_menu_genre}</div>
-                            <div class="menu_price">price</div>
-                          </div>`;
-
-    //menu_list_container에 헤더 추가
-    $(`.menu_list_container`).eq(i).append(menu_genre_header);
 
     $(`.menu_list_container`).eq(i).append(`<div class='menu_ul_outer'></div>`);
     // menu_list_container 안에 ul 생성
@@ -42,12 +31,19 @@ $(document).ready(() => {
       if (curr_menu_genre == menu_introduce[j].menugenre) {
         let menu_genre_item = `
                   <li class="menu_list_item">
-                      <div class="menu_genre menu_name">${
-                        menu_introduce[j].menuName
-                      }</div>
-                      <div class="menu_price">${menu_introduce[
-                        j
-                      ].price.toLocaleString("ko")}</div>
+                      <div class="img_box">
+                        <img src='../img/${
+                          menu_introduce[j].img_src
+                        }' alt='menu_img'/>
+                      </div>
+                      <div class='menu_info_container'>
+                        <div class="menu_genre menu_name">${
+                          menu_introduce[j].menuName
+                        }</div>
+                        <div class="menu_price">${menu_introduce[
+                          j
+                        ].price.toLocaleString("ko")}</div>
+                      </div>
                   </li>
               `;
         $(`.${curr_menu_list}_list`).append(menu_genre_item);

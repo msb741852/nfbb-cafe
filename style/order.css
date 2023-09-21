@@ -1,0 +1,172 @@
+/* ==== page_contents =====*/
+.page_contents {
+  display: flex;
+  justify-content: space-between;
+}
+.page_contents > div {
+  width: 50%;
+}
+
+/* ===== order-container ===== */
+/* .order_container */
+.order_container_header {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+.order_container_header .menu_name_text {
+  width: 50%;
+}
+.order_container_header .price_text {
+  width: 20%;
+}
+.order_container_header .pcs_text {
+  width: 30%;
+}
+
+/* order_list_container */
+.order_list_container {
+  height: 500px;
+}
+.order_item {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding: 20px 10px;
+
+  font-family: "BMHannaPro";
+}
+.order_item:nth-child(2n) {
+  background-color: #ececec;
+}
+.item_menu_name {
+  width: 50%;
+}
+.item_menu_price {
+  width: 20%;
+}
+.item_menu_pcs_container {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.item_btn {
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+.item_btn:active {
+  background-color: #ccc;
+}
+.price_info_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 20px;
+  font-family: "BMHannaPro";
+}
+.price_info_container > div {
+  width: 40%;
+}
+.price_info_container > div:nth-child(2n) {
+  text-align: right;
+}
+.btn_order {
+  width: 100%;
+  padding: 50px 0;
+  border-radius: 12px;
+  background: #333;
+  color: #fff;
+  font-size: 24px;
+  font-family: "BMHannaPro";
+  text-align: center;
+}
+
+.priceInfoAndBtn_container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== menu_list_container ===== */
+.menu_list_container {
+  height: calc(100% - 36px);
+  display: none;
+  position: relative;
+}
+.menu_list_container_active {
+  display: block;
+}
+
+/* ====== tab_btn ====== */
+.tab_btn_container {
+  display: flex;
+  align-items: center;
+}
+.tab_btn {
+  padding: 10px 20px;
+  transition: all 0.5s;
+  color: #ddd;
+  transform: translateY(0);
+  cursor: pointer;
+}
+.tab_btn_active {
+  transform: translateY(-50%);
+  color: #333;
+}
+
+/* ====== menu_list ===== */
+.menu_ul_outer {
+  width: calc(100% - 25px);
+  height: 100%;
+  margin: 0 auto;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.25);
+  padding: 50px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.menu_list {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;
+}
+.menu_list_item {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  font-family: "BMHannaPro";
+  cursor: pointer;
+  font-size: 0;
+  border-radius: 12px;
+}
+.menu_list_item:hover {
+  background: rgba(187, 185, 184, 0.631);
+}
+.menu_list_item .img_box {
+  width: 40%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.img_box img {
+  width: 100%;
+  transform: scale(1.5);
+}
+.menu_info_container {
+  width: 50%;
+  text-align: center;
+  font-size: 22px;
+}
+
+.menu_list_item.menu_list_header {
+  font-family: "HoltWoodOneSC";
+}
