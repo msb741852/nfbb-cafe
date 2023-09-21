@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../style/reset.css" />
     <link rel="stylesheet" href="../style/common.css" />
     <link rel="stylesheet" href="../style/order.css" />
+    <link rel="stylesheet" href="../style/form_common.css" />
     <script
       src="https://kit.fontawesome.com/57b67e461c.js"
       crossorigin="anonymous"
@@ -35,26 +36,7 @@
                 <div class="pcs_text">pcs</div>
               </div>
               <div class="order_list_container">
-                <ul class="order_list">
-                  <li class="order_item">
-                    <div class="item_menu_name">ice americano</div>
-                    <div class="item_menu_price">5000</div>
-                    <div class="item_menu_pcs_container">
-                      <div class="item_btn item_btn_minus">-</div>
-                      <span class="item_menu_pcs">1</span>
-                      <div class="item_btn item_btn_plus">+</div>
-                    </div>
-                  </li>
-                  <li class="order_item">
-                    <div class="item_menu_name">ice cafelatte</div>
-                    <div class="item_menu_price">5000</div>
-                    <div class="item_menu_pcs_container">
-                      <div class="item_btn item_btn_minus">-</div>
-                      <span class="item_menu_pcs">1</span>
-                      <div class="item_btn item_btn_plus">+</div>
-                    </div>
-                  </li>
-                </ul>
+                <ul class="order_list"></ul>
               </div>
             </div>
             <div class="priceInfoAndBtn_container">
@@ -62,10 +44,10 @@
                 <div class="can_point_text">사용 가능 포인트 : 7,000</div>
                 <div class="use_point_container">
                   <span> 포인트 사용: </span
-                  ><input type="text" id="point_input" value="0" />
+                  ><input type="text" id="point_input" placeholder="0" />
                 </div>
-                <div class="total_price">총액 : 20,000</div>
-                <div class="final_price">지불할 금액 : 20,000</div>
+                <div class="total_price">총액 : 0</div>
+                <div class="final_price">지불할 금액 : 0</div>
               </div>
               <div class="btn_order">주문하기</div>
             </div>
@@ -91,6 +73,7 @@
           </div>
         </div>
       </footer>
+      <div class="modal_container"></div>
     </div>
     <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script defer src="../script/dummy.js"></script>
