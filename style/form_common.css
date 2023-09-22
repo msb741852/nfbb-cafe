@@ -122,11 +122,14 @@
   text-align: center;
   line-height: 25px;
 }
-.btn_close {
+.btn_close,
+.btn_yes {
+  width: 50px;
   padding: 10px 30px;
   border-radius: 12px;
   background-color: #ddd;
   cursor: pointer;
+  text-align: center;
 }
 .btn_close:active {
   background-color: #ccc;

@@ -72,10 +72,10 @@ $(document).ready(function () {
                                     <a href="${domain}/pages/edit_profile.html">내 정보 변경</a>
                                   </li>
                                   <li class="detail_menu_item">
-                                    <a href="#">주문 목록</a>
+                                    <a href="${domain}/pages/my_order.html">주문 목록</a>
                                   </li>
                                   <li class="detail_menu_item">
-                                    <a href="#">포인트 조회</a>
+                                    <a href="${domain}/pages/point.html">포인트 조회</a>
                                   </li>
                                   <li class="detail_menu_item" id="btn_logout">
                                     <a href="${domain}/index.html">로그아웃</a>

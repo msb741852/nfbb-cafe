@@ -285,3 +285,61 @@ const user_info = [
     point: 10000,
   },
 ];
+
+const ORDER_LIST = [
+  {
+    order_id: 1,
+    menu_name: "아포가토",
+    pcs: 1,
+    order_user: "admin",
+    order_date: "2023.09.21",
+  },
+  {
+    order_id: 2,
+    menu_name: "홍.자",
+    pcs: 1,
+    order_user: "admin",
+    order_date: "2023.09.22",
+  },
+  {
+    order_id: 3,
+    menu_name: "구름 스무디",
+    pcs: 1,
+    order_user: "user1",
+    order_date: "2023.09.22",
+  },
+  {
+    order_id: 4,
+    menu_name: "레몬에이드",
+    pcs: 1,
+    order_user: "admin",
+    order_date: "2023.09.23",
+  },
+];
+
+const POINT = [
+  {
+    userId: "admin",
+    point_date: "2023.09.13",
+    isUse: false,
+    point: 1500,
+  },
+  {
+    userId: "admin",
+    point_date: "2023.09.13",
+    isUse: true,
+    point: 5000,
+  },
+  {
+    userId: "admin",
+    point_date: "2023.07.13",
+    isUse: false,
+    point: 400,
+  },
+  {
+    userId: "admin",
+    point_date: "2023.07.12",
+    isUse: true,
+    point: 400,
+  },
+];

@@ -1,0 +1,44 @@
+.explain_text {
+  display: block;
+  width: 100%;
+  text-align: right;
+  font-size: 14px;
+  color: #888;
+  padding-bottom: 20px;
+}
+
+.page_contents {
+  font-family: "BMHannaPro";
+  font-size: 20px;
+}
+.point_list_container {
+  width: 98%;
+  margin: 0 auto;
+  height: 500px;
+  padding: 50px 50px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 10px 10px 10px 0 #00000040;
+}
+.point_header_item,
+.point_contents_item {
+  width: 33%;
+  text-align: center;
+}
+
+.point_list_header {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.point_list_contents {
+  display: flex;
+  justify-content: space-between;
+}
+.point_isUse {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

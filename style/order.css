@@ -185,3 +185,9 @@
 .menu_list_item.menu_list_header {
   font-family: "HoltWoodOneSC";
 }
+
+.btn_container {
+  display: flex;
+  gap: 20px;
+  text-align: center;
+}

@@ -23,12 +23,15 @@ $(document).ready(() => {
   $(".can_point_text").text(
     "사용 가능 포인트 : " + user_info[0].point.toLocaleString("ko")
   );
-  $(document).on("click", ".btn_close", () => {
+  function close_modal() {
     $(".modal_box").remove();
     $(".modal_container").css({
       opacity: 0,
       pointerEvents: "none",
     });
+  }
+  $(document).on("click", ".btn_close", () => {
+    close_modal();
   });
   $("#point_input").focus(() => {
     // total_price가 0 일 때 포인트 입력하면 판 띄우기
@@ -270,4 +273,41 @@ $(document).ready(() => {
     final_price -= +$("#point_input").val();
     $(".final_price").text("지불할 금액 : " + final_price.toLocaleString("ko"));
   }
+
+  function order() {
+    result_el = `
+        <div class="modal_box">
+          <div class="modal_contents_container">
+            <span class="result_text">결제하시겠습니까?</span>
+            <div class="btn_container">
+              <div class="btn_yes">예</div>
+              <div class="btn_close">아니오</div>
+            </div>
+          </div>
+        </div>
+    `;
+  }
+
+  $(".btn_order").click(() => {
+    let total_price = +$(".total_price")
+      .text()
+      .split(":")[1]
+      .trim()
+      .replace(",", "");
+
+    // total이 0 이 아니면 order modal창 보여주기
+    if (total_price > 0) {
+      order();
+      show_modal();
+
+      $(".btn_yes").on("click", () => {
+        $(".result_text").text("주문이 완료되었습니다! 😊");
+        $(".btn_container").remove();
+        setTimeout(() => {
+          close_modal();
+          location.replace("./order.html");
+        }, 1000);
+      });
+    }
+  });
 });
