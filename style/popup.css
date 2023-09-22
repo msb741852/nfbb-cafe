@@ -2,6 +2,20 @@
   width: 100%;
   height: 100%;
 }
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
 
 .pan {
   width: 400px;
@@ -22,7 +36,6 @@
   width: 95%;
   height: 90%;
   border-radius: 12px;
-  overflow: h;
   border: 1px solid #ddd;
   overflow: hidden;
   margin: 0 auto;
@@ -36,12 +49,8 @@
 .slide_item {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 100%;
   pointer-events: none;
   user-select: none;
-  transition: all 1s;
 }
 .slide_item:nth-child(1) {
   left: 0;
@@ -58,12 +67,6 @@
   height: 100%;
 }
 
-.btn_popup_L {
-  left: 10px;
-}
-.btn_popup_R {
-  right: 10px;
-}
 .btn_container {
   display: flex;
   justify-content: space-between;

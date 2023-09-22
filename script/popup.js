@@ -1,35 +1,38 @@
 $(document).ready(() => {
+  //  도메인 확인
+  let domain = "";
+  domain = location.href.slice(0, location.href.indexOf("/", 8));
+  if (location.href.includes("https")) {
+    //https를 포함하고 있는 경우
+    domain += "/nfbb-cafe";
+  }
+
   // ================= 쿠키 관련 시작 ==================
   // cookie 확인
 
   const cookies = document.cookie;
   const popup_el = `
                     <div class="pan">
-                    <div class="slide_container">
-                      <div class="swiper">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                          <!-- Slides -->
-                          <div class="swiper-slide">
-                            <img src="../img/popup_img01.jpeg" alt="popup_img" />
+                      <div class="slide_container">
+                        <div class="swiper mySwiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                            <img src='${domain}/img/popup_img01.jpeg' alt='popup_img' />
+                            </div>
+                            <div class="swiper-slide">
+                            <img src='${domain}/img/popup_img02.jpeg' alt='popup_img' />
+                            </div>
+                            <div class="swiper-slide">
+                            <img src='${domain}/img/popup_img03.jpeg' alt='popup_img' />
+                            </div>
+                            <div class="swiper-slide">
+                            <img src='${domain}/img/popup_img04.jpeg' alt='popup_img' />
+                            </div>
                           </div>
-                          <div class="swiper-slide">
-                            <img src="../img/popup_img02.jpeg" alt="popup_img" />
-                          </div>
-                          <div class="swiper-slide">
-                            <img src="../img/popup_img03.jpeg" alt="popup_img" />
-                          </div>
+                          <div class="swiper-button-next swiper-btn"></div>
+                          <div class="swiper-button-prev swiper-btn"></div>
+                          <div class="swiper-pagination"></div>
                         </div>
-                        <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
-
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev swiper-btn"></div>
-                        <div class="swiper-button-next swiper-btn"></div>
-
-                        <!-- If we need scrollbar -->
-                        <div class="swiper-scrollbar"></div>
-                      </div>
                     </div>
                     <div class="btn_container">
                       <div class="popup_btn btn_oneday_close">오늘 하루 닫기</div>
@@ -40,32 +43,21 @@ $(document).ready(() => {
 
   if (!cookies.includes("popup")) {
     $("body").append(popup_el);
-    const swiper = new Swiper(".swiper", {
-      // Optional parameters
-      direction: "horizontal",
-      loop: true,
+    let swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
       autoplay: {
-        delay: 2000,
+        delay: 2500,
+        disableOnInteraction: false,
       },
-
-      // If we need pagination
       pagination: {
         el: ".swiper-pagination",
+        clickable: true,
       },
-
-      // Navigation arrows
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: ".swiper-scrollbar",
-      },
-    });
-    swiper.on("slideChange", function () {
-      console.log("slide changed");
     });
   }
   let hour_24 = 1 * 60 * 60 * 24;
