@@ -12,7 +12,9 @@ $(document).ready(() => {
   // 메뉴 소개 아이템
   for (let i = 0; i < 10; i++) {
     let menu_introduce_item = `
-                <li class="menu_item" id="menu${i + 1}">
+                 <div class="swiper-slide menu-swiper-slide menu_item" id="menu${
+                   i + 1
+                 }">
                   <img src="./img/${
                     menu_introduce[i].img_src
                   }" alt="menu_img" />
@@ -20,10 +22,30 @@ $(document).ready(() => {
                     <div class="menu_title">${menu_introduce[i].menuName}</div>
                     <div class="menu_price">${menu_introduce[i].price}</div>
                   </div>
-                </li>
-                `;
-    $(".menu_introduce_list").append(menu_introduce_item);
+                 </div>`;
+
+    $(".menu_swiper_wrapper").append(menu_introduce_item);
   }
+  let menu_swiper = new Swiper(".menu_swiper", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  $(".menu-swiper-slide").on("mouseenter", () => {
+    menu_swiper.autoplay.stop();
+  });
+  $(".menu-swiper-slide").on("mouseleave", () => {
+    menu_swiper.autoplay.start();
+  });
 
   // ======================= 요소 생성 끝 =========================
 
@@ -67,96 +89,6 @@ $(document).ready(() => {
         paddingTop: header_height + "px",
       });
     }
-  }
-
-  //==================== menu_introduce slide ================================
-
-  let menu_item_width = $(".menu_item").width();
-  for (let i = 0; i < $(".menu_item").length; i++) {
-    $(".menu_item")
-      .eq(i)
-      .css({
-        left: menu_item_width * i,
-      });
-  }
-  let curr_slide_no = 0;
-  let menu_item_cnt = $(".menu_item").length;
-  let slide_timer = 1000;
-  let slide_interval;
-
-  auto_slide();
-
-  $(".btn_next").on("click", () => {
-    prevent_btn(slide_timer);
-    slide_all("R", `-=${menu_item_width}`);
-    slide_init(
-      "R",
-      curr_slide_no % menu_item_cnt,
-      menu_item_width * ($(".menu_item").length - 1)
-    );
-    curr_slide_no += 1;
-  });
-  $(".btn_prev").on("click", () => {
-    prevent_btn(slide_timer);
-    // 현재 슬라이드 번호 -1 left: -width
-    slide_init("L", (curr_slide_no - 1) % menu_item_cnt, menu_item_width);
-    // item 전체 left +넓이만큼
-    slide_all("L", `+=${menu_item_width}`);
-    curr_slide_no -= 1;
-  });
-
-  $(".menu_introduce_list").on("mouseenter", () => {
-    clearInterval(slide_interval);
-  });
-  $(".menu_introduce_list").on("mouseleave", () => {
-    auto_slide();
-  });
-
-  function slide_init(direction, eq_value, left_value) {
-    if (direction == "R") {
-      setTimeout(() => {
-        $(".menu_item").eq(eq_value).css({
-          left: left_value,
-          transition: "all 0s",
-        });
-      }, 1000);
-    } else if (direction == "L") {
-      $(".menu_item").eq(eq_value).css({
-        left: -left_value,
-        transition: "all 0s",
-      });
-    }
-  }
-  function slide_all(direction, left_value) {
-    if (direction == "R") {
-      $(".menu_item").css({
-        left: left_value,
-        transition: "all 1s",
-      });
-    } else if (direction == "L") {
-      setTimeout(() => {
-        $(".menu_item").css({
-          left: left_value,
-          transition: "all 1s",
-        });
-      }, 10);
-    }
-  }
-  function prevent_btn(timer) {
-    $(".slide_btn").css({
-      pointerEvents: "none",
-    });
-    setTimeout(() => {
-      $(".slide_btn").css({
-        pointerEvents: "auto",
-      });
-    }, timer);
-  }
-  function auto_slide() {
-    clearInterval(slide_interval);
-    slide_interval = setInterval(() => {
-      $(".btn_next").trigger("click");
-    }, slide_timer + 1000);
   }
 
   $(".prevent_event > a").click(function (event) {

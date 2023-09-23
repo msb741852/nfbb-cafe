@@ -14,8 +14,8 @@ $(document).ready(() => {
   const popup_el = `
                     <div class="pan">
                       <div class="slide_container">
-                        <div class="swiper mySwiper">
-                          <div class="swiper-wrapper">
+                        <div class="swiper popup_swiper">
+                          <div class="swiper-wrapper popup-swiper-wrapper">
                             <div class="swiper-slide">
                             <img src='${domain}/img/popup_img01.jpeg' alt='popup_img' />
                             </div>
@@ -43,23 +43,34 @@ $(document).ready(() => {
 
   if (!cookies.includes("popup")) {
     $("body").append(popup_el);
-    let swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
   }
+  let popup_swiper = new Swiper(".popup_swiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    observer: true,
+    observeParents: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  $(".popup-swiper-wrapper").on("mouseenter", () => {
+    popup_swiper.autoplay.stop();
+  });
+  $(".popup-swiper-wrapper").on("mouseleave", () => {
+    popup_swiper.autoplay.start();
+  });
+
   let hour_24 = 1 * 60 * 60 * 24;
   $(".btn_oneday_close").click(() => {
     document.cookie = `popup=true;max-age=${hour_24}`;
