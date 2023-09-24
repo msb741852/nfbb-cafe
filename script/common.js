@@ -33,7 +33,7 @@ $(document).ready(function () {
                                 </ul>
                               </div>
                             </li>
-                            <li class="navbar_item"><a href="#">store</a></li>
+                            <li class="navbar_item"><a href="${domain}/pages/store.html">store</a></li>
                             <li class="navbar_item"><a href="${domain}/pages/about.html">about</a></li>
                             <li class="navbar_item">
                               <a href="${domain}/pages/login.html">login</a>
@@ -61,7 +61,7 @@ $(document).ready(function () {
                               </div>
                             </li>
                             <li class="navbar_item"><a href="${domain}/pages/order.html">order</a></li>
-                            <li class="navbar_item"><a href="#">store</a></li>
+                            <li class="navbar_item"><a href="${domain}/pages/store.html">store</a></li>
                             <li class="navbar_item"><a href="${domain}/pages/about.html">about</a></li>
                             <li class="navbar_item" id="user_li">
                               <a href="#">

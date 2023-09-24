@@ -79,3 +79,8 @@
 
 - 2023.09.23
   - (MODIFIED) index 페이지 menu 슬라이드 swiper js로 변경
+
+---
+
+- 2023.09.24
+  - (ADD) STORE 페이지 추가
