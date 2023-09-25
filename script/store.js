@@ -20,13 +20,13 @@ $(document).ready(() => {
       zIndex: 0,
     });
     $(".item_box").css({
-      top: 0,
+      top: "100px",
       backgroundColor: "#ececec",
       boxShadow: "none",
     });
 
     $(this).css({
-      top: "-100px",
+      top: "0",
       backgroundColor: "#ddd",
       boxShadow: "1px 1px 10px #ddd",
     });

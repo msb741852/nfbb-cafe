@@ -33,7 +33,7 @@
   height: 1200px;
   border-radius: 12px;
   position: absolute;
-  top: 0;
+  top: 100px;
   left: 50%;
   transform: translate(-50%, -80%);
   background: #ececec;

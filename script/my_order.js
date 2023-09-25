@@ -30,6 +30,4 @@ $(document).ready(() => {
         `;
     $(".my_order_list_contents_outer").append(order_list_item_el);
   }
-
-  $(".my_order_list_contents").on("click", function () {});
 });

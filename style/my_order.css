@@ -1,12 +1,3 @@
-.explain_text {
-  display: block;
-  width: 100%;
-  text-align: right;
-  font-size: 14px;
-  color: #888;
-  padding-bottom: 20px;
-}
-
 .page_contents {
   font-family: "BMHannaPro";
   font-size: 20px;
@@ -26,7 +17,6 @@
   width: 33%;
   text-align: center;
 }
-
 .my_order_list_header {
   display: flex;
   justify-content: space-between;

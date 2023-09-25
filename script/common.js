@@ -149,4 +149,7 @@ $(document).ready(function () {
       $(".detail_menu").removeClass("detail_menu_active");
     }
   );
+  $(".modal_container").css({
+    height: $(document).height(),
+  });
 });

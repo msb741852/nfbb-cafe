@@ -66,16 +66,35 @@ $(document).ready(() => {
 
   // 문자 못넣게 만듬 => 하이픈 넣는 것만 넣으면 됨
   $("#uPhone").keydown(function (event) {
+    let curr_text = $(this).val();
+    if (
+      (!(event.keyCode == 8) && $(this).val().length == 3) ||
+      (!(event.keyCode == 8) && $(this).val().length == 8)
+    ) {
+      $(this).val(curr_text + "-");
+    }
+
     if (
       !(
         (48 <= event.keyCode && event.keyCode <= 57) ||
-        (96 <= event.keyCode && event.keyCode <= 105)
+        (96 <= event.keyCode && event.keyCode <= 105) ||
+        event.keyCode == 8
       )
     ) {
       event.preventDefault();
     }
   });
 
+  $("#uPhone").keyup(function (event) {
+    let curr_text_keyup = $(this).val();
+
+    if (
+      (event.keyCode == 8 && $(this).val().length == 4) ||
+      (event.keyCode == 8 && $(this).val().length == 9)
+    ) {
+      $(this).val(curr_text_keyup.slice(0, -1));
+    }
+  });
   // ==================== 전화번호 관련 끝 ======================
 
   $("#btn_join").click((event) => {
