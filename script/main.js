@@ -91,12 +91,19 @@ $(document).ready(() => {
     }
   }
 
+  let domain = "";
+  domain = location.href.slice(0, location.href.indexOf("/", 8));
+  if (location.href.includes("https")) {
+    //https를 포함하고 있는 경우
+    domain += "/nfbb-cafe";
+  }
+
   $(".prevent_event > a").click(function (event) {
     event.preventDefault();
     if (getCookie()) {
       location.href = $(this).attr("href");
     } else {
-      location.href = "../pages/login.html";
+      location.href = `${domain}/pages/login.html`;
     }
   });
   function getCookie() {
